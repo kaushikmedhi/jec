@@ -77,7 +77,6 @@
                         <label>Year of passing</label>
                         <input type="text" name="yop" id="yop" placeholder="Year of passing" required>
                     </div>
-                    <br>
                     <div class="row">
                         <label for="Branch">Branch</label>
                         <select name="branch" id="branch">
@@ -98,7 +97,6 @@
 
                         </select>
                     </div>
-                    <br>
                     <div class="row">
                         <label for="hostel">Hostel</label>
                         <select name="hostel" id="hostel">
@@ -112,7 +110,6 @@
 
                         </select>
                     </div>
-                    <br>
                     <div class="row">
                         <label>Hostel no.</label>
                         <input type="text" name="hostel_no" id="hostel_no" placeholder="Hostel no." required>
