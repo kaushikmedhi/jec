@@ -20,12 +20,12 @@
             var nav_button = document.getElementById("nav_button");
             var nav = document.getElementById("nav");
 
-            if (nav.style.display == "none") {
-                nav.style.display = "block";
-                nav_button.style.transform = "rotate(0deg)";
-            } else {
+            if (nav.style.display == "block") {
                 nav.style.display = "none";
                 nav_button.style.transform = "rotate(90deg)";
+            } else {
+                nav.style.display = "block";
+                nav_button.style.transform = "rotate(0deg)";
             }
         }
     </script>
