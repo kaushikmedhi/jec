@@ -7,17 +7,29 @@
 body{
     background-color: white;
 }
+
+main{
+    display: flex;
+}
+
+nav{
+    flex: 1;
+    background-color: rgb(34, 49, 61);
+    width: 100%;
+    height: 100vh;
+    padding: 50px 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+nav a{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
 body a:hover{
     text-decoration: underline;
-}
-main{
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 14%;
-    background-color: rgb(227, 233, 235);
 }
 .text{
     display: flex;
@@ -61,27 +73,21 @@ main{
 
 
 .modal {
-    display: block; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 20; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+   position: relative;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(255, 255, 255, 0.747);
+    background-color: rgba(246, 233, 228, 0.747);
+    flex: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
   }
   
   /* Modal Content */
   .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     background-color: #fefefe;
     padding: 10px;
-    margin: 50px 0;
-    width: 60%;
+    width: 80%;
     height: auto;
     box-shadow: 0 0 5px rgba(182, 182, 182, 0.849);
     border-radius: 0.5rem;
@@ -113,7 +119,11 @@ main{
   }
   .modal-content form .row{
       display: flex;
-      justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+  }
+  .row label{
+      width: 190px;
   }
   .modal-content form .title{
       margin: 5px;
@@ -121,7 +131,7 @@ main{
       color: gray;
       font-size: 12px;
   }
-  .modal-content form input{
+  .modal-content form input ,select{
       width: 100%;
       padding: 12px 5px;
       margin: 5px;
@@ -147,7 +157,7 @@ main{
   .modal-content form .createAc{
       background-color: rgb(43, 167, 18);
       border: none;
-      width: 45%;
+      width: 100%;
       padding: 8px;
       margin: 15px;
   }
@@ -159,6 +169,5 @@ img{
     width: 80px;
     margin: 0 20px;
 }
-
 
   
