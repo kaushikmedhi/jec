@@ -1,0 +1,164 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+body{
+    background-color: white;
+}
+body a:hover{
+    text-decoration: underline;
+}
+main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 14%;
+    background-color: rgb(227, 233, 235);
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text h1{
+    font-size: 58px;
+    font-weight: 600;
+    color: rgb(31, 107, 194);
+    padding: 0 0 15px 0;
+}
+.text p{
+    font-size: 28px;
+}
+.login p{
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+.line{
+    width: 100%;
+    height: 0.5px;
+    background-color: rgba(192, 190, 190, 0.726);
+    margin: 10px 0;
+}
+.createAc{
+    background-color: rgb(43, 167, 18);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+    padding: 14px;
+    margin:  14px 0; 
+}
+.createAc:hover{
+    background-color: rgb(40, 151, 18);
+}
+
+
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 20; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(255, 255, 255, 0.747);
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fefefe;
+    padding: 10px;
+    margin: 50px 0;
+    width: 60%;
+    height: auto;
+    box-shadow: 0 0 5px rgba(182, 182, 182, 0.849);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-content .head{
+      display: flex;
+      justify-content: space-between;
+      height: 100px;
+      margin: 10px;
+  }
+  .modal-content .head #close{
+      border: none;
+      background-color: transparent;
+      font-size: 20px;
+      font-weight: 900;
+      color: rgb(54, 54, 54);
+  }
+  .head h1{
+      font-size: 30px;
+      color: black;
+      padding: 0;
+      cursor: default;
+  }
+  .head p{
+    font-size: 14px;
+    color: gray;
+  }
+  .modal-content form .row{
+      display: flex;
+      justify-content: space-around;
+  }
+  .modal-content form .title{
+      margin: 5px;
+      margin-top: 10px;
+      color: gray;
+      font-size: 12px;
+  }
+  .modal-content form input{
+      width: 100%;
+      padding: 12px 5px;
+      margin: 5px;
+      border: 0.5px solid rgba(121, 121, 121, 0.315);
+      border-radius: 0.5rem;
+      background-color: rgba(233, 233, 233, 0.281);
+  }
+  .radio-btn{
+    width: 90%;
+    border: 1px solid gray;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.5px solid rgba(121, 121, 121, 0.315);
+    border-radius: 0.5rem;
+  }
+  .modal-content form p{
+      color: gray;
+      font-size: 11.5px;
+  }
+  .modal-content form .createAc{
+      background-color: rgb(43, 167, 18);
+      border: none;
+      width: 45%;
+      padding: 8px;
+      margin: 15px;
+  }
+  .modal-content form .createAc:hover{
+    background-color: rgb(40, 151, 18);
+  }
+
+img{
+    width: 80px;
+    margin: 0 20px;
+}
+
+
+  
