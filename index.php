@@ -10,34 +10,52 @@
 </head>
 
 <body>
+
+    <div class="head">
+        <div class="hide" id="nav_button" onclick="nav_button()">
+            <h1>|||</h1>
+        </div>
+        <script>
+        function nav_button() {
+            var nav_button = document.getElementById("nav_button");
+            var nav = document.getElementById("nav");
+
+            if (nav.style.display == "none") {
+                nav.style.display = "block";
+                nav_button.style.transform = "rotate(0deg)";
+            } else {
+                nav.style.display = "none";
+                nav_button.style.transform = "rotate(90deg)";
+            }
+        }
+    </script>
+        <div class="logo">
+            <img src="logo.jpg" alt="logo">
+        </div>
+        <div class="text">
+            <h1>Jorhat Engineering College</h1>
+            <p>Diamond Jubilee Celebration.</p>
+        </div>
+        <div class="logo">
+            <img src="logo2.jpg" alt="logo2">
+        </div>
+    </div>
+
     <main>
 
-    <nav>
-        <h1>Diamond Jubilee Registration</h1>
-        <br>
-        <div class="line"></div>
-        <br><br>
-        <a href="">Alumni Registration</a>
-        <br><br>
-        <a href="">Student Registration</a>
-    </nav>
+        <nav id="nav">
+            <h1>Diamond Jubilee Registration</h1>
+            <br>
+            <div class="line"></div>
+            <br><br>
+            <a href="">Alumni Registration</a>
+            <br><br>
+            <a href="">Student Registration</a>
+        </nav>
 
         <div id="myModal" class="modal">
             <div class="modal-content">
-                <div class="head">
-                    <div class="logo">
-                        <img src="logo.jpg" alt="logo">
-                    </div>
-                    <div class="text">
-                        <h1>Jorhat Engineering College</h1>
-                        <p>Diamond Jubilee Celebration.</p>
-                    </div>
-                    <div class="logo">
-                        <img src="logo2.jpg" alt="logo2">
-                    </div>
-                </div>
-                <div class="line"></div>
-                
+
                 <form action="reg.php" method="POST">
                     <div class="row">
                         <label>Phone</label>
@@ -118,49 +136,49 @@
             </div>
         </div>
 
-        
-        </main>
 
-        <script>
-            function GetDetail(str) {
-                if (str.length == 0) {
-                    document.getElementById("name").value = "";
-                    document.getElementById("address").value = "";
-                    document.getElementById("occupation").value = "";
-                    document.getElementById("yop").value = "";
-                    document.getElementById("branch").value = "";
-                    document.getElementById("hostel").value = "";
-                    document.getElementById("hostel_no").value = "";
-                    document.getElementById("contribution").value = "";
-                    return;
-                } else {
-                    var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.onreadystatechange = function() {
+    </main>
 
-                        if (this.readyState == 4 &&
-                            this.status == 200) {
+    <script>
+        function GetDetail(str) {
+            if (str.length == 0) {
+                document.getElementById("name").value = "";
+                document.getElementById("address").value = "";
+                document.getElementById("occupation").value = "";
+                document.getElementById("yop").value = "";
+                document.getElementById("branch").value = "";
+                document.getElementById("hostel").value = "";
+                document.getElementById("hostel_no").value = "";
+                document.getElementById("contribution").value = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
 
-                            var myObj = JSON.parse(this.responseText);
+                    if (this.readyState == 4 &&
+                        this.status == 200) {
+
+                        var myObj = JSON.parse(this.responseText);
 
 
-                            document.getElementById("name").value = myObj[0];
-                            document.getElementById("address").value = myObj[1];
+                        document.getElementById("name").value = myObj[0];
+                        document.getElementById("address").value = myObj[1];
 
-                            document.getElementById("occupation").value = myObj[2];
-                            document.getElementById("yop").value = myObj[3];
-                            document.getElementById("branch").value = myObj[4];
-                            document.getElementById("hostel").value = myObj[5];
-                            document.getElementById("hostel_no").value = myObj[6];
-                            document.getElementById("contribution").value = myObj[7];
-                        }
-                    };
+                        document.getElementById("occupation").value = myObj[2];
+                        document.getElementById("yop").value = myObj[3];
+                        document.getElementById("branch").value = myObj[4];
+                        document.getElementById("hostel").value = myObj[5];
+                        document.getElementById("hostel_no").value = myObj[6];
+                        document.getElementById("contribution").value = myObj[7];
+                    }
+                };
 
-                    xmlhttp.open("GET", "getdetails.php?phone=" + str, true);
+                xmlhttp.open("GET", "getdetails.php?phone=" + str, true);
 
-                    xmlhttp.send();
-                }
+                xmlhttp.send();
             }
-        </script>
+        }
+    </script>
 
 </body>
 

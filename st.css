@@ -8,28 +8,32 @@ body{
     background-color: white;
 }
 
-main{
+.hide{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-nav{
-    flex: 1;
-    background-color: rgb(34, 49, 61);
-    width: 100%;
-    height: 100vh;
-    padding: 50px 20px;
-    color: white;
-    position: sticky;
+.head{
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    padding: 10px 100px;
+    position: fixed;
     top: 0;
+    z-index: 10;
+    background-color: #394867;
+    width: 100%;
 }
-nav a{
-    font-size: 20px;
-    text-decoration: none;
+.head h1{
+    font-size: 30px;
     color: rgb(255, 255, 255);
+    padding: 0;
+    cursor: default;
 }
-
-body a:hover{
-    text-decoration: underline;
+.head p{
+  font-size: 20px;
+  color: rgb(250, 250, 250);
 }
 .text{
     display: flex;
@@ -37,15 +41,36 @@ body a:hover{
     justify-content: center;
     align-items: center;
 }
-.text h1{
-    font-size: 58px;
+.head h1{
+    font-size: 38px;
     font-weight: 600;
-    color: rgb(31, 107, 194);
-    padding: 0 0 15px 0;
+    color: rgb(255, 255, 255);
 }
-.text p{
-    font-size: 28px;
+
+main{
+    display: flex;
+    margin-top: 90px;
 }
+
+nav{
+    flex: 1;
+    background-color: #9BA4B4;
+    width: 100%;
+    padding: 50px 20px;
+    color: rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+}
+nav a{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+body a:hover{
+    text-decoration: underline;
+}
+
 .login p{
     text-align: center;
     padding: 30px 0;
@@ -54,7 +79,7 @@ body a:hover{
 .line{
     width: 100%;
     height: 0.5px;
-    background-color: rgba(192, 190, 190, 0.726);
+    background-color: rgba(66, 66, 66, 0.726);
     margin: 10px 0;
 }
 .createAc{
@@ -75,8 +100,8 @@ body a:hover{
 .modal {
    position: relative;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(246, 233, 228, 0.747);
-    flex: 4;
+    background-color: #F1F6F9;
+    flex: 5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,29 +118,6 @@ body a:hover{
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-  }
-  .modal-content .head{
-      display: flex;
-      justify-content: space-between;
-      height: 100px;
-      margin: 10px;
-  }
-  .modal-content .head #close{
-      border: none;
-      background-color: transparent;
-      font-size: 20px;
-      font-weight: 900;
-      color: rgb(54, 54, 54);
-  }
-  .head h1{
-      font-size: 30px;
-      color: black;
-      padding: 0;
-      cursor: default;
-  }
-  .head p{
-    font-size: 14px;
-    color: gray;
   }
   .modal-content form .row{
       display: flex;
@@ -166,7 +168,7 @@ body a:hover{
   }
 
 img{
-    width: 80px;
+    width: 70px;
     margin: 0 20px;
 }
 
