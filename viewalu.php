@@ -1,56 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
 
-
-<!doctype html>
-<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="my.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<title>Alumni</title>
-<style>
-body{
-    font-family: 'Montserrat', sans-serif;
-}
-.nav{
-    color:white;
-}
-
-.nav:hover{
-  color: red;
-  cursor: pointer;
-}
-header{
-  position: sticky;
-  top:0;
-  z-index: 999;
-}
-.image{
-  position:absolute;
-    width:400px;
-    left:0;
-    bottom:0;
-    z-index:997;
-    margin-bottom:81px;
-    margin-left:50px;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEC Diamond Jubilee</title>
+    <link rel="stylesheet" href="st.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
 
+    <div class="head">
+        <div class="hide" id="nav_button" onclick="nav_button()">
+            <h1>|||</h1>
+        </div>
+        
+        <div class="logo">
+            <img src="logo.jpg" alt="logo">
+        </div>
+        <div class="text">
+            <h1>Jorhat Engineering College</h1>
+            <p>Diamond Jubilee Celebration.</p>
+        </div>
+        <div class="logo">
+            <img src="logo2.jpg" alt="logo2">
+        </div>
 
+    </div>
 
+    <main>
+    
+        <nav id="nav">
+            <h1>Diamond Jubilee Registration</h1>
+            <br>
+            <div class="line"></div>
+            <br><br>
+            <a href="index.php">Alumni Registration</a>
+            <br><br>
+            <a href="student.php">Student Registration</a>
+            <br><br>
+            <a href="viewalu.php">View Alumni</a>
+            <br><br>
+            <a href="viewstu.php">View Student</a>
+        </nav>
 
-    <div class="my-content">
-        <div class="my-container">
-            <br><br><br><br>
-      
-  
-        <br><br><br>
+        <div id="myModal" class="modal">
         <table id="datatable" class="my-table-all">
                 <thead >
                     <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">ID</th>
@@ -96,9 +92,27 @@ header{
                     
                 </tbody>
             </table>
-        
-    </div>
-</div>
+        </div>
+
+
+    </main>
+
+
+<script>
+        function nav_button() {
+            var nav_button = document.getElementById("nav_button");
+            var nav = document.getElementById("nav");
+
+            if (nav.style.display == "block") {
+                nav.style.display = "none";
+                nav_button.style.transform = "rotate(90deg)";
+            } else {
+                nav.style.display = "block";
+                nav_button.style.transform = "rotate(0deg)";
+            }
+        }
+    </script>
+
 
 
 
@@ -114,9 +128,7 @@ $(document).ready(function() {
 </script>
 
 
-
-
-
-
 </body>
+
 </html>
+

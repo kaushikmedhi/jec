@@ -41,9 +41,9 @@
             <br><br>
             <a href="">Student Registration</a>
             <br><br>
-            <a href="">View Alumni</a>
+            <a href="viewalu.php">View Alumni</a>
             <br><br>
-            <a href="">View Student</a>
+            <a href="viewstu.php">View Student</a>
         </nav>
 
         <div id="myModal" class="modal">

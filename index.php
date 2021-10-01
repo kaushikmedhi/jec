@@ -41,9 +41,9 @@
             <br><br>
             <a href="student.php">Student Registration</a>
             <br><br>
-            <a href="">View Alumni</a>
+            <a href="viewalu.php">View Alumni</a>
             <br><br>
-            <a href="">View Student</a>
+            <a href="viewstu.php">View Student</a>
         </nav>
 
         <div id="myModal" class="modal">
@@ -130,18 +130,34 @@
     </main>
 
     <script>
+        
+
         function GetDetail(str) {
+            input_name = document.getElementById("name");
+            input_address = document.getElementById("address");
+            input_occupation = document.getElementById("occupation");
+            input_yop = document.getElementById("yop");
+            input_branch = document.getElementById("branch");
+            input_hostel = document.getElementById("hostel");
+            input_hostel_no = document.getElementById("hostel_no");
+            input_contribution = document.getElementById("contribution");
+
             if (str.length == 0) {
-                document.getElementById("name").value = "";
-                document.getElementById("address").value = "";
-                document.getElementById("occupation").value = "";
-                document.getElementById("yop").value = "";
-                document.getElementById("branch").value = "";
-                document.getElementById("hostel").value = "";
-                document.getElementById("hostel_no").value = "";
-                document.getElementById("contribution").value = "";
+
+
+
+                input_name.value = "";
+                input_address.value = "";
+                input_occupation.value = "";
+                input_yop.value = "";
+                input_branch.value = "";
+                input_hostel.value = "";
+                input_hostel_no.value = "";
+                input_contribution.value = "";
                 return;
             } else {
+
+
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
 
@@ -150,17 +166,46 @@
 
                         var myObj = JSON.parse(this.responseText);
 
+                        if (myObj === null) {
+                            input_name.readOnly = false;
+                            input_address.readOnly = false;
+                            input_occupation.readOnly = false;
+                            input_yop.readOnly = false;
+                            input_branch.disabled = false;
+                            input_hostel.disabled = false;
+                            input_contribution.readOnly = false;
 
-                        document.getElementById("name").value = myObj[0];
-                        document.getElementById("address").value = myObj[1];
+                            input_name.value = "";
+                            input_address.value = "";
+                            input_occupation.value = "";
+                            input_yop.value = "";
+                            input_branch.value = "";
+                            input_hostel.value = "";
+                            input_hostel_no.value = "";
+                            input_contribution.value = "";
+                        }
 
-                        document.getElementById("occupation").value = myObj[2];
-                        document.getElementById("yop").value = myObj[3];
-                        document.getElementById("branch").value = myObj[4];
-                        document.getElementById("hostel").value = myObj[5];
-                        document.getElementById("hostel_no").value = myObj[6];
-                        document.getElementById("contribution").value = myObj[7];
+                        input_name.value = myObj[0];
+                        input_address.value = myObj[1];
+
+                        input_occupation.value = myObj[2];
+                        input_yop.value = myObj[3];
+                        input_branch.value = myObj[4];
+                        input_hostel.value = myObj[5];
+                        input_hostel_no.value = myObj[6];
+                        input_contribution.value = myObj[7];
+
+                        input_name.readOnly = true;
+                        input_address.readOnly = true;
+                        input_occupation.readOnly = true;
+                        input_yop.readOnly = true;
+                        input_branch.readOnly = true;
+                        input_hostel.readOnly = true;
+                        input_hostel_no.readOnly = true;
+                        input_contribution.readOnly = true;
                     }
+
+
                 };
 
                 xmlhttp.open("GET", "getdetails.php?phone=" + str, true);
