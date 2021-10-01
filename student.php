@@ -37,7 +37,7 @@
             <br>
             <div class="line"></div>
             <br><br>
-            <a href="">Alumni Registration</a>
+            <a href="index.php">Alumni Registration</a>
             <br><br>
             <a href="">Student Registration</a>
             <br><br>

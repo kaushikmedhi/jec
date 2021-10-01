@@ -15,8 +15,8 @@ $add_contribution = empty($_POST['add_contribution']) ? '0' : $_POST['add_contri
 
 
 
-				$query = "INSERT INTO `alumni` (`id`, `phone`, `name`, `address`, `occupation`, `yop`, `branch`, `hostel`, `hostel_no`, `contribution`, `add_contribution`) VALUES (null, '$phone', '$name', '$address', '$occupation', '$yop', '$branch', '$hostel', '$hostel_no', '$contribution', '$add_contribution') ON DUPLICATE KEY UPDATE   
-				`add_contribution`= '$add_contribution'";
+				$query = "INSERT INTO `alumni` (`id`, `phone`, `name`, `address`, `occupation`, `yop`, `branch`, `hostel`, `hostel_no`, `contribution`, `add_contribution`, `reg_date`) VALUES (null, '$phone', '$name', '$address', '$occupation', '$yop', '$branch', '$hostel', '$hostel_no', '$contribution', '$add_contribution', CURRENT_TIMESTAMP()) ON DUPLICATE KEY UPDATE   
+				`add_contribution`= '$add_contribution', `reg_date`=CURRENT_TIMESTAMP()";
 
 				if (mysqli_query($con, $query)) {
 					header("location:index.php");
