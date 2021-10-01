@@ -31,7 +31,7 @@
     </div>
 
     <main>
-
+    
         <nav id="nav">
             <h1>Diamond Jubilee Registration</h1>
             <br>
@@ -39,7 +39,11 @@
             <br><br>
             <a href="">Alumni Registration</a>
             <br><br>
-            <a href="">Student Registration</a>
+            <a href="student.php">Student Registration</a>
+            <br><br>
+            <a href="">View Alumni</a>
+            <br><br>
+            <a href="">View Student</a>
         </nav>
 
         <div id="myModal" class="modal">
