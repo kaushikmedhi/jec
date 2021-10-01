@@ -4,8 +4,9 @@
     box-sizing: border-box;
     font-family:sans-serif;
 }
+
 body{
-    background-color: white;
+    background-color: #F1F6F9;
 }
 
 
@@ -114,6 +115,7 @@ body a:hover{
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    height: 100%;
   }
   
   /* Modal Content */
@@ -121,7 +123,7 @@ body a:hover{
     background-color: #fefefe;
     padding: 10px;
     width: 80%;
-    height: auto;
+    height: 100%;
     box-shadow: 0 0 5px rgba(182, 182, 182, 0.849);
     border-radius: 0.5rem;
     display: flex;

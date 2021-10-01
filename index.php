@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JEC Diamond Jubilee</title>
     <link rel="stylesheet" href="st.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -15,20 +16,7 @@
         <div class="hide" id="nav_button" onclick="nav_button()">
             <h1>|||</h1>
         </div>
-        <script>
-        function nav_button() {
-            var nav_button = document.getElementById("nav_button");
-            var nav = document.getElementById("nav");
-
-            if (nav.style.display == "block") {
-                nav.style.display = "none";
-                nav_button.style.transform = "rotate(90deg)";
-            } else {
-                nav.style.display = "block";
-                nav_button.style.transform = "rotate(0deg)";
-            }
-        }
-    </script>
+        
         <div class="logo">
             <img src="logo.jpg" alt="logo">
         </div>
@@ -39,6 +27,7 @@
         <div class="logo">
             <img src="logo2.jpg" alt="logo2">
         </div>
+
     </div>
 
     <main>
@@ -59,7 +48,7 @@
                 <form action="reg.php" method="POST">
                     <div class="row">
                         <label>Phone</label>
-                        <input type="text" name="phone" id="phone" onkeyup="GetDetail(this.value)" placeholder="Phone" required>
+                        <input type="number" min="10" name="phone" id="phone" onkeyup="GetDetail(this.value)" placeholder="Phone" required>
                     </div>
                     <div class="row">
                         <label>Name</label>
@@ -99,7 +88,7 @@
                     </div>
                     <div class="row">
                         <label for="hostel">Hostel</label>
-                        <select name="hostel" id="hostel">
+                        <select name="hostel" id="hostel" onchange="yesno(this);">
 
                             <option value="" selected disabled>Select Hostel Option</option>
 
@@ -110,9 +99,9 @@
 
                         </select>
                     </div>
-                    <div class="row">
+                    <div class="row" id="yes" style="display: none;">
                         <label>Hostel no.</label>
-                        <input type="text" name="hostel_no" id="hostel_no" placeholder="Hostel no." required>
+                        <input type="text" name="hostel_no" id="hostel_no" placeholder="Hostel no.">
                     </div>
 
                     <div class="row">
@@ -122,7 +111,7 @@
 
                     <div class="row">
                         <label for="">Additional Contribution</label>
-                        <input type="number" name="add_contribution" id="add_contribution" placeholder="Additional Contribution" required>
+                        <input type="number" min="0" name="add_contribution" id="add_contribution" placeholder="Additional Contribution" >
                     </div>
 
                     <div class="row">
@@ -176,6 +165,31 @@
             }
         }
     </script>
+<script>
+        function nav_button() {
+            var nav_button = document.getElementById("nav_button");
+            var nav = document.getElementById("nav");
+
+            if (nav.style.display == "block") {
+                nav.style.display = "none";
+                nav_button.style.transform = "rotate(90deg)";
+            } else {
+                nav.style.display = "block";
+                nav_button.style.transform = "rotate(0deg)";
+            }
+        }
+    </script>
+
+
+<script>
+    function yesno(that) {
+    if (that.value == "yes") {
+        document.getElementById("yes").style.display = "flex";
+    } else {
+        document.getElementById("yes").style.display = "none";
+    }
+}
+</script>
 
 </body>
 
