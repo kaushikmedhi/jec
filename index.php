@@ -119,7 +119,7 @@
                     </div>
 
                     <div class="row">
-                        <input type="submit" class="createAc" value="Submit">
+                        <input type="submit" class="createAc" value="Submit" onclick="confirm1()">
                     </div>
                 </form>
 
@@ -128,6 +128,20 @@
 
 
     </main>
+
+<script>
+    function confirm1(){
+        var iframe = document.createElement("IFRAME");
+iframe.setAttribute("src", 'data:text/plain,');
+document.documentElement.appendChild(iframe);
+if(window.frames[0].window.confirm("Are you sure?")){
+    // what to do if answer "YES"
+}else{
+    // what to do if answer "NO"
+}
+    }
+</script>
+
 
     <script>
         

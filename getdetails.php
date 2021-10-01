@@ -29,7 +29,7 @@ if ($phone !== "") {
       // Store it in a array
       $result = array("$name", "$address", "$occupation", "$yop", "$branch", "$hostel", "$hostel_no", "$contribution");
    }else {
-      $result = array(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+      $result = null;
    }
 }
 
