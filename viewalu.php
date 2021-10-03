@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JEC Diamond Jubilee</title>
     <link rel="stylesheet" href="st.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.material.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.material.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/4.0.0/material-components-web.min.css">
 </head>
 
 <body>
@@ -47,20 +51,20 @@
         </nav>
 
         <div id="myModal" class="modal">
-        <table id="datatable" class="my-table-all">
-                <thead >
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">ID</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Phone</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Name</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Address</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Occupation</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">YOP</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Branch</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Hostel</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Hostel No</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Contribution</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Additonal Contribution</th>
-                    <th class="my-text-white" style="text-align:center;width:20%; background-color: #770677;">Total Contribution</th>
+        <table id="datatable" class="mdl-data-table">
+                <thead style="background-color: lightgray;">
+                    <th style="text-align:center;">ID</th>
+                    <th style="text-align:center;">Phone</th>
+                    <th style="text-align:center;">Name</th>
+                    <th style="text-align:center;">Address</th>
+                    <th style="text-align:center;">Occupation</th>
+                    <th style="text-align:center;">YOP</th>
+                    <th style="text-align:center;">Branch</th>
+                    <th style="text-align:center;">Hostel</th>
+                    <th style="text-align:center;">Hostel No</th>
+                    <th style="text-align:center;">Contribution</th>
+                    <th style="text-align:center;">Additonal Contribution</th>
+                    <th style="text-align:center;">Total Contribution</th>
                 </thead>
                 <tbody>
 
@@ -71,18 +75,18 @@
                       while($row=mysqli_fetch_array($result))
                           {
                           echo'<tr class="my-white" style="border-width: 0px;">';
-                                echo'<td style="width:20%; text-align:center;">'.$row[0].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[1].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[2].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[3].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[4].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[5].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[6].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[7].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[8].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[9].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[10].'</td>';
-                                echo'<td style="width:20%; text-align:center;">'.$row[11].'</td>';
+                                echo'<td text-align:center;">'.$row[0].'</td>';
+                                echo'<td text-align:center;">'.$row[1].'</td>';
+                                echo'<td text-align:center;">'.$row[2].'</td>';
+                                echo'<td text-align:center;">'.$row[3].'</td>';
+                                echo'<td text-align:center;">'.$row[4].'</td>';
+                                echo'<td text-align:center;">'.$row[5].'</td>';
+                                echo'<td text-align:center;">'.$row[6].'</td>';
+                                echo'<td text-align:center;">'.$row[7].'</td>';
+                                echo'<td text-align:center;">'.$row[8].'</td>';
+                                echo'<td text-align:center;">'.$row[9].'</td>';
+                                echo'<td text-align:center;">'.$row[10].'</td>';
+                                echo'<td text-align:center;">'.$row[11].'</td>';
                                 
                                 
                                 
@@ -115,15 +119,17 @@
 
 
 
-
-
-<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
-
-
 <script>
 $(document).ready(function() {
-    $('#datatable').DataTable();
+    $('#datatable').DataTable( {
+        autoWidth: false,
+        columnDefs: [
+            {
+                targets: ['_all'],
+                className: 'mdc-data-table__cell'
+            }
+        ]
+    } );
 } );
 </script>
 

@@ -44,6 +44,8 @@
             <a href="viewalu.php">View Alumni</a>
             <br><br>
             <a href="viewstu.php">View Student</a>
+            <br><br>
+            <a href="prev_alumni.php">View Prev Alumni</a>
         </nav>
 
         <div id="myModal" class="modal">

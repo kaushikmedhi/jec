@@ -168,3 +168,10 @@ body a:hover{
   }
 
   
+  #datatable input{
+      width: 100%;
+      background-color: lightcyan;
+      padding: 10px;
+      border-radius: 0.5rem;
+      border: none;
+  }

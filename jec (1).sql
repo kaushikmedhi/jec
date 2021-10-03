@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 01, 2021 at 06:55 AM
+-- Generation Time: Oct 03, 2021 at 05:52 PM
 -- Server version: 5.7.32
 -- PHP Version: 7.4.12
 
@@ -47,10 +47,35 @@ CREATE TABLE `alumni` (
 --
 
 INSERT INTO `alumni` (`id`, `phone`, `name`, `address`, `occupation`, `yop`, `branch`, `hostel`, `hostel_no`, `contribution`, `add_contribution`, `total`, `reg_date`) VALUES
-(1, '9909876765', 'Kaushik', 'Guwahati', 'Student', 2012, 'MCA', 'yes', 2, 5000, 5000, 0, '2021-10-01'),
-(2, '9909876700', 'Kaushik', 'a', 'aa', 0000, 'aa', 'yes', 4, 5000, 500, 0, NULL),
-(3, '1234567890', 'jugantar', 'Guwahati', 'Student', 2012, 'CIVIL', 'yes', 4, 5000, 1100, 0, NULL),
-(8, '9090909090', 'Test', 'jorhat', 'aa', 2012, 'CIVIL', 'yes', 1, 5000, 500, 5500, '2021-10-01');
+(14, '9090909090', 'aa', 'aa', 'aa', 2012, 'COMPUTER SCIENCE', 'no', 0, 5000, 6000, 11000, '2021-10-01'),
+(20, '1234556789', 'jugNTr', 'jorhat', 'Student', 2012, 'ELECTRICAL', 'no', 0, 5000, 188, 5188, '2021-10-01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prev_alumni`
+--
+
+CREATE TABLE `prev_alumni` (
+  `id` int(255) NOT NULL,
+  `date` date NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `branch` varchar(255) DEFAULT NULL,
+  `batch` year(4) DEFAULT NULL,
+  `membership_no` varchar(255) DEFAULT NULL,
+  `amount` int(255) NOT NULL,
+  `mop` varchar(255) NOT NULL,
+  `book_no` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `prev_alumni`
+--
+
+INSERT INTO `prev_alumni` (`id`, `date`, `name`, `branch`, `batch`, `membership_no`, `amount`, `mop`, `book_no`, `phone`) VALUES
+(1, '2021-10-04', 'Test', 'civil', 2012, 'JECAA-123', 10000, 'Online', 'WEB/TEST/123', '99098987665'),
+(2, '2021-10-05', 'ABC', 'civil', 2011, 'test-99', 5000, 'Online', 'web/889988', '9988776655');
 
 -- --------------------------------------------------------
 
@@ -69,20 +94,6 @@ CREATE TABLE `student` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`sid`, `name`, `phone`, `branch`, `hostel`, `hostelno`, `degree`) VALUES
-(1, 'Anku', '9776543211', 'MCA', 'yes', 5, ''),
-(2, 'qweqeweqwe', '9999955555', 'MCA', 'yes', 12, ''),
-(3, 'QWEqweqweqweqeq', '65435421', 'ELECTRICAL', 'yes', 12, 'UG'),
-(9, 'Test', '9090909090', 'COMPUTER SCIENCE', 'no', 0, 'UG'),
-(10, 'Test', '9090909090', 'COMPUTER SCIENCE', 'no', 0, 'UG'),
-(11, 'Test', '9090909090', 'COMPUTER SCIENCE', 'no', 0, 'UG'),
-(12, 'Test', '9090909090', 'ELECTRICAL', 'no', 0, 'PG'),
-(13, 'Test', '9090909090', 'ELECTRICAL', 'no', 0, 'PG');
-
---
 -- Indexes for dumped tables
 --
 
@@ -92,6 +103,12 @@ INSERT INTO `student` (`sid`, `name`, `phone`, `branch`, `hostel`, `hostelno`, `
 ALTER TABLE `alumni`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `phone` (`phone`);
+
+--
+-- Indexes for table `prev_alumni`
+--
+ALTER TABLE `prev_alumni`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `student`
@@ -107,13 +124,19 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `alumni`
 --
 ALTER TABLE `alumni`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `prev_alumni`
+--
+ALTER TABLE `prev_alumni`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `sid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `sid` int(100) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
