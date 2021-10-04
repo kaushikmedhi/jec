@@ -62,20 +62,9 @@ img{
 }
 
 main{
-    display: flex;
     margin-top: 90px;
 }
 
-nav{
-    display: none;
-    flex: 1;
-    background-color: #F1F6F9;
-    width: 100%;
-    padding: 50px 20px;
-    color: rgb(0, 0, 0);
-    position: sticky;
-    top: 0;
-}
 nav a{
     font-size: 20px;
     text-decoration: none;
@@ -117,7 +106,6 @@ body a:hover{
    position: relative;
     overflow: auto; /* Enable scroll if needed */
     background-color: #F1F6F9;
-    flex: 5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,11 +162,44 @@ body a:hover{
       font-size: 11.5px;
   }
 
-  
-  #datatable input{
-      width: 100%;
-      background-color: lightcyan;
-      padding: 10px;
-      border-radius: 0.5rem;
-      border: none;
+
+  /* navigation madal */
+  .modal-nav {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 20; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
   }
+  
+  /* Modal Content */
+  .nav-content {
+    z-index: 20; /* Sit on top */
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 25%;
+    box-shadow: 0 0 5px rgb(153, 153, 153);
+    border-radius: 0.5rem;
+  }
+
+  .modal-options{
+    animation: ex 0.2s ease-out;
+}
+.modal-options a{
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+  
+@keyframes ex {
+    0% {transform: translateX(100%); opacity: 0;}
+    100% {transform: translateX(0); opacity: 1;}
+}

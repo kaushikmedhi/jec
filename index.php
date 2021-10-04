@@ -8,48 +8,34 @@
     <title>JEC Diamond Jubilee</title>
     <link rel="stylesheet" href="st.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
 
     <div class="head">
         <div class="part1">
-        <div class="hide" id="nav_button" onclick="nav_button()">
-            <h1>|||</h1>
+            <div class="hide" id="myBtn-notification">
+                <h1>|||</h1>
+            </div>
+        </div>
+        <div class="part2">
+            <div class="logo">
+                <img src="logo.jpg" alt="logo">
+            </div>
+            <div class="text">
+                <h1>Jorhat Engineering College</h1>
+                <p>Diamond Jubilee Celebration.</p>
+            </div>
+            <div class="logo">
+                <img src="logo2.jpg" alt="logo2">
+            </div>
         </div>
     </div>
-    <div class="part2">
-        <div class="logo">
-            <img src="logo.jpg" alt="logo">
-        </div>
-        <div class="text">
-            <h1>Jorhat Engineering College</h1>
-            <p>Diamond Jubilee Celebration.</p>
-        </div>
-        <div class="logo">
-            <img src="logo2.jpg" alt="logo2">
-        </div>
-    </div>
-    </div>
+
+    <?php include('nav.php'); ?>
 
     <main>
-    
-        <nav id="nav">
-            <h1>Diamond Jubilee Registration</h1>
-            <br>
-            <div class="line"></div>
-            <br><br>
-            <a href="">Alumni Registration</a>
-            <br><br>
-            <a href="student.php">Student Registration</a>
-            <br><br>
-            <a href="viewalu.php">View Alumni</a>
-            <br><br>
-            <a href="viewstu.php">View Student</a>
-            <br><br>
-            <a href="prev_alumni.php">View Prev Alumni</a>
-        </nav>
-
         <div id="myModal" class="modal">
             <div class="modal-content">
 
@@ -119,7 +105,7 @@
 
                     <div class="row">
                         <label for="">Additional Contribution</label>
-                        <input type="number" min="0" name="add_contribution" id="add_contribution" placeholder="Additional Contribution" >
+                        <input type="number" min="0" name="add_contribution" id="add_contribution" placeholder="Additional Contribution">
                     </div>
 
                     <div class="row">
@@ -133,23 +119,21 @@
 
     </main>
 
-<script>
-    function confirm1(){
-        var iframe = document.createElement("IFRAME");
-iframe.setAttribute("src", 'data:text/plain,');
-document.documentElement.appendChild(iframe);
-if(window.frames[0].window.confirm("Are you sure?")){
-    // what to do if answer "YES"
-}else{
-    // what to do if answer "NO"
-}
-    }
-</script>
+    <script>
+        function confirm1() {
+            var iframe = document.createElement("IFRAME");
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            if (window.frames[0].window.confirm("Are you sure?")) {
+                // what to do if answer "YES"
+            } else {
+                // what to do if answer "NO"
+            }
+        }
+    </script>
 
 
     <script>
-        
-
         function GetDetail(str) {
             input_name = document.getElementById("name");
             input_address = document.getElementById("address");
@@ -232,31 +216,19 @@ if(window.frames[0].window.confirm("Are you sure?")){
             }
         }
     </script>
-<script>
-        function nav_button() {
-            var nav_button = document.getElementById("nav_button");
-            var nav = document.getElementById("nav");
 
-            if (nav.style.display == "block") {
-                nav.style.display = "none";
-                nav_button.style.transform = "rotate(90deg)";
+
+    <script>
+        function yesno(that) {
+            if (that.value == "yes") {
+                document.getElementById("yes").style.display = "flex";
             } else {
-                nav.style.display = "block";
-                nav_button.style.transform = "rotate(0deg)";
+                document.getElementById("yes").style.display = "none";
             }
         }
     </script>
 
-
-<script>
-    function yesno(that) {
-    if (that.value == "yes") {
-        document.getElementById("yes").style.display = "flex";
-    } else {
-        document.getElementById("yes").style.display = "none";
-    }
-}
-</script>
+<script src="modal-nav.js"></script>
 
 </body>
 

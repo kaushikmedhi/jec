@@ -12,45 +12,35 @@
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.material.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.material.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/4.0.0/material-components-web.min.css">
+  
 </head>
 
 <body>
 
-<div class="head">
+    <div class="head">
         <div class="part1">
-        <div class="hide" id="nav_button" onclick="nav_button()">
-            <h1>|||</h1>
+            <div class="hide" id="myBtn-notification">
+                <h1>|||</h1>
+            </div>
         </div>
-    </div>
-    <div class="part2">
-        <div class="logo">
-            <img src="logo.jpg" alt="logo">
+        <div class="part2">
+            <div class="logo">
+                <img src="logo.jpg" alt="logo">
+            </div>
+            <div class="text">
+                <h1>Jorhat Engineering College</h1>
+                <p>Diamond Jubilee Celebration.</p>
+            </div>
+            <div class="logo">
+                <img src="logo2.jpg" alt="logo2">
+            </div>
         </div>
-        <div class="text">
-            <h1>Jorhat Engineering College</h1>
-            <p>Diamond Jubilee Celebration.</p>
-        </div>
-        <div class="logo">
-            <img src="logo2.jpg" alt="logo2">
-        </div>
-    </div>
     </div>
 
+    <?php include('nav.php'); ?>
+
+
     <main>
-    
-        <nav id="nav">
-            <h1>Diamond Jubilee Registration</h1>
-            <br>
-            <div class="line"></div>
-            <br><br>
-            <a href="index.php">Alumni Registration</a>
-            <br><br>
-            <a href="student.php">Student Registration</a>
-            <br><br>
-            <a href="viewalu.php">View Alumni</a>
-            <br><br>
-            <a href="viewstu.php">View Student</a>
-        </nav>
 
         <div id="myModal" class="modal">
         <table id="datatable" class="mdl-data-table">
@@ -134,7 +124,7 @@ $(document).ready(function() {
     } );
 } );
 </script>
-
+<script src="modal-nav.js"></script>
 
 </body>
 
