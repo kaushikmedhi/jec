@@ -16,11 +16,13 @@
 
 <body>
 
-    <div class="head">
+<div class="head">
+        <div class="part1">
         <div class="hide" id="nav_button" onclick="nav_button()">
             <h1>|||</h1>
         </div>
-        
+    </div>
+    <div class="part2">
         <div class="logo">
             <img src="logo.jpg" alt="logo">
         </div>
@@ -31,7 +33,7 @@
         <div class="logo">
             <img src="logo2.jpg" alt="logo2">
         </div>
-
+    </div>
     </div>
 
     <main>
