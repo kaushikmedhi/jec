@@ -19,18 +19,25 @@ img{
     justify-content: center;
     align-items: center;
     transform: rotate(90deg);
+    padding: 10px 30px;
 }
 
 .head{
     display: flex;
     justify-content: space-between;
     height: 90px;
-    padding: 10px 100px;
+    padding: 10px 0;
     position: fixed;
     top: 0;
     z-index: 10;
     background-color: #394867;
     width: 100%;
+}
+.part2{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 30px;
 }
 .head h1{
     font-size: 30px;
