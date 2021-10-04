@@ -60,6 +60,8 @@
 
                             <option value="" selected disabled>Select Branch</option>
 
+                            <option value="null">NOT AVAILABLE</option>
+
                             <option value="CIVIL">CIVIL</option>
 
                             <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
@@ -78,12 +80,12 @@
 
                     <div class="row">
                         <label>Batch</label>
-                        <input type="text" name="batch" id="batch" placeholder="Batch" >
+                        <input type="number" min="1500" max="2022" name="batch" id="batch" placeholder="Batch" >
                     </div>
 
                     <div class="row">
                         <label>Membership No.</label>
-                        <input type="text" name="mem_no" id="mem_no" placeholder="Membership No." required>
+                        <input type="text" name="mem_no" id="mem_no" placeholder="Membership No." >
                     </div>
 
                     <div class="row">
@@ -110,7 +112,7 @@
 
                     <div class="row">
                         <label>Book No.</label>
-                        <input type="text" name="book_no" id="book_no" placeholder="Book No." required>
+                        <input type="text" name="book_no" id="book_no" placeholder="Book No." >
                     </div>
 
                     <div class="row">

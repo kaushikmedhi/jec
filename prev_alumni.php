@@ -41,10 +41,15 @@
     <?php include('nav.php'); ?>
 
     <main>
+    <center>
+    <div class="search">
+                <input type="text" id="search" placeholder="Type here to Search...">
+            </div>
+    </center>
     
-
         <div id="myModal" class="modal">
         <table id="datatable" class="mdl-data-table">
+            
                 <thead style="background-color: lightgray;">
                     <th style="text-align:center;">ID</th>
                     <th style="text-align:center;">Date</th>
@@ -65,21 +70,30 @@
                       $result=mysqli_query($con,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr">';
-                                echo'<td text-align:center;">'.$row[0].'</td>';
-                                echo'<td text-align:center;">'.$row[1].'</td>';
-                                echo'<td text-align:center;">'.$row[2].'</td>';
-                                echo'<td text-align:center;">'.$row[3].'</td>';
-                                echo'<td text-align:center;">'.$row[4].'</td>';
-                                echo'<td text-align:center;">'.$row[5].'</td>';
-                                echo'<td text-align:center;">'.$row[6].'</td>';
-                                echo'<td text-align:center;">'.$row[7].'</td>';
-                                echo'<td text-align:center;">'.$row[8].'</td>';
-                                echo'<td text-align:center;">'.$row[9].'</td>';
+                                ?>
+                                <tr>
+                                <td text-align:center;><?php echo $row[0]; ?></td>
                                 
+                                <td text-align:center; ><?php echo $row[1]; ?></td>
                                 
+                                <td text-align:center; ><?php echo $row[2]; ?></td>
                                 
-                        echo'</tr>';
+                                <td text-align:center; <?php if($row[3] == "null") {echo 'style="background-color:rgba(160, 4, 4, 0.314);"';} ?>><?php echo $row[3]; ?></td>
+                                
+                                <td text-align:center; <?php if($row[4] == "0000") {echo 'style="background-color:rgba(160, 4, 4, 0.314);"';} ?>><?php echo $row[4]; ?></td>
+                                
+                                <td text-align:center; <?php if($row[5] == "null") {echo 'style="background-color:rgba(160, 4, 4, 0.314);"';} ?>><?php echo $row[5]; ?></td>
+
+                                <td text-align:center; ><?php echo $row[6]; ?></td>
+                                
+                                <td text-align:center;><?php echo $row[7]; ?></td>
+                                
+                                <td text-align:center; <?php if($row[8] == "null") {echo 'style="background-color:rgba(160, 4, 4, 0.314);"';} ?>><?php echo $row[8]; ?></td>
+                                
+
+                                <td text-align:center; <?php if($row[9] == "null") {echo 'style="background-color:rgba(160, 4, 4, 0.314);"';} ?>><?php echo $row[9]; ?></td>
+                                <?php
+                        echo '</tr>';
                           }   
                       ?>   
                     
@@ -91,39 +105,24 @@
     </main>
 
 
-<script>
-        function nav_button() {
-            var nav_button = document.getElementById("nav_button");
-            var nav = document.getElementById("nav");
-
-            if (nav.style.display == "block") {
-                nav.style.display = "none";
-                nav_button.style.transform = "rotate(90deg)";
-            } else {
-                nav.style.display = "block";
-                nav_button.style.transform = "rotate(0deg)";
-            }
-        }
-    </script>
-
-
-
-
-
-
 
 <script>
 $(document).ready(function() {
-    $('#datatable').DataTable( {
+    dTable=$('#datatable').DataTable( {
         autoWidth: false,
         columnDefs: [
             {
                 targets: ['_all'],
                 className: 'mdc-data-table__cell'
             }
-        ]
+        ],
+        "dom":"lrtip"
     } );
 } );
+
+$('#search').keyup(function(){  
+        dTable.search($(this).val()).draw(); 
+   })
 </script>
 <script src="modal-nav.js"></script>
 
