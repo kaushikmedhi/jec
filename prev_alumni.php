@@ -41,6 +41,7 @@
     <?php include('nav.php'); ?>
 
     <main>
+        
     <center>
     <div class="search">
                 <input type="text" id="search" placeholder="Type here to Search...">

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Oct 03, 2021 at 05:52 PM
--- Server version: 5.7.32
--- PHP Version: 7.4.12
+-- Host: localhost
+-- Generation Time: Oct 05, 2021 at 07:59 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,14 +29,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `alumni` (
   `id` int(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `occupation` varchar(255) NOT NULL,
-  `yop` year(4) NOT NULL,
-  `branch` varchar(255) NOT NULL,
-  `hostel` enum('yes','no') NOT NULL,
-  `hostel_no` int(10) DEFAULT NULL,
+  `yop` varchar(100) DEFAULT NULL,
+  `branch` varchar(255) DEFAULT NULL,
+  `chapter` varchar(255) NOT NULL,
   `contribution` int(255) NOT NULL,
   `add_contribution` int(255) DEFAULT NULL,
   `total` int(255) NOT NULL,
@@ -46,9 +46,11 @@ CREATE TABLE `alumni` (
 -- Dumping data for table `alumni`
 --
 
-INSERT INTO `alumni` (`id`, `phone`, `name`, `address`, `occupation`, `yop`, `branch`, `hostel`, `hostel_no`, `contribution`, `add_contribution`, `total`, `reg_date`) VALUES
-(14, '9090909090', 'aa', 'aa', 'aa', 2012, 'COMPUTER SCIENCE', 'no', 0, 5000, 6000, 11000, '2021-10-01'),
-(20, '1234556789', 'jugNTr', 'jorhat', 'Student', 2012, 'ELECTRICAL', 'no', 0, 5000, 188, 5188, '2021-10-01');
+INSERT INTO `alumni` (`id`, `email`, `phone`, `name`, `address`, `yop`, `branch`, `chapter`, `contribution`, `add_contribution`, `total`, `reg_date`) VALUES
+(21, 'test@email.com', '9909878765', 'Test Person', 'Somewhere in USA', '2011', 'CIVIL', 'USA', 75000, 0, 75000, '2021-10-05'),
+(23, 'test2@a.a', '', 'kaushik', '', '', '', 'Bengaluru', 7000, 2000, 9000, '2021-10-05'),
+(24, 'a@b.c', '', 'Rajkumar Da', '', '', '', 'USA', 10000, 0, 10000, '2021-10-05'),
+(25, 'some.test.user.12345@gmail.com', '7876765678', 'Someone With A Very Long Name OK Thank You', 'Somewhere on Earth, a very long address, this is a test, do not take this seriously', '', '', 'Jorhat', 7000, 0, 7000, '2021-10-05');
 
 -- --------------------------------------------------------
 
@@ -102,7 +104,7 @@ CREATE TABLE `student` (
 --
 ALTER TABLE `alumni`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `phone` (`phone`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `prev_alumni`
@@ -124,7 +126,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `alumni`
 --
 ALTER TABLE `alumni`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `prev_alumni`
@@ -137,6 +139,7 @@ ALTER TABLE `prev_alumni`
 --
 ALTER TABLE `student`
   MODIFY `sid` int(100) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

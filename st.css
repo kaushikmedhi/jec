@@ -199,6 +199,16 @@ body a:hover{
     100% {transform: translateX(0); opacity: 1;}
 }
 
+table{
+    border-spacing: 0;
+    table-layout: fixed;
+}
+table th, td{
+    border: 1px solid rgba(0, 0, 0, 0.555);
+    word-break: break-all;
+}
+
+
 .search{
     width: 70%;
     padding: 20px;

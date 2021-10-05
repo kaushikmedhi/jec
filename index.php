@@ -41,25 +41,20 @@
 
                 <form action="reg.php" method="POST">
                     <div class="row">
-                        <label>Phone</label>
-                        <input type="number" min="10" name="phone" id="phone" onkeyup="GetDetail(this.value)" placeholder="Phone" required>
+                        <label>E-mail</label>
+                        <input type="email" name="email" id="email" onkeyup="GetDetail(this.value)" placeholder="E-mail" required>
                     </div>
+
                     <div class="row">
                         <label>Name</label>
                         <input type="text" name="name" id="name" placeholder="Name" required>
                     </div>
                     <div class="row">
-                        <label>Address</label>
-                        <input type="text" name="address" id="address" placeholder="Address" required>
+                        <label>Phone</label>
+                        <input type="number" min="10" name="phone" id="phone" placeholder="Phone">
                     </div>
-                    <div class="row">
-                        <label>Occupation</label>
-                        <input type="text" name="occupation" id="occupation" placeholder="Current Occupation" required>
-                    </div>
-                    <div class="row">
-                        <label>Year of passing</label>
-                        <input type="text" name="yop" id="yop" placeholder="Year of passing" required>
-                    </div>
+
+
                     <div class="row">
                         <label for="Branch">Branch</label>
                         <select name="branch" id="branch">
@@ -80,7 +75,67 @@
 
                         </select>
                     </div>
+
                     <div class="row">
+                        <label>Batch</label>
+                        <input type="number" min="4" max="4" name="yop" id="yop" placeholder="Year of passing">
+                    </div>
+
+                    <div class="row">
+                        <label>Chapter</label>
+                        <select name="chapter" id="chapter">
+
+                            <option value="" selected disabled>Select Chapter</option>
+
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+
+                            <option value="Bengaluru">Bengaluru</option>
+
+                            <option value="Central Commitee">Central Commitee</option>
+
+                            <option value="Delhi NCR">Delhi NCR</option>
+
+                            <option value="Dibrugarh">Dibrugarh</option>
+
+                            <option value="Digboi">Digboi</option>
+
+                            <option value="Duliajan">Duliajan</option>
+
+                            <option value="Guwahati">Guwahati</option>
+
+                            <option value="Jorhat">Jorhat</option>
+
+                            <option value="Kolkata">Kolkata</option>
+
+                            <option value="Lakhimpur">Lakhimpur</option>
+
+                            <option value="Manipur">Manipur</option>
+
+                            <option value="Mumbai">Mumbai</option>
+
+                            <option value="Nagaon">Nagaon</option>
+
+                            <option value="NRL">NRL</option>
+
+                            <option value="Silchar">Silchar</option>
+
+                            <option value="Sivasagar">Sivasagar</option>
+
+                            <option value="Tezpur">Tezpur</option>
+
+                            <option value="USA">USA</option>
+
+                            <option value="Other">Other</option>
+
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <label>Address</label>
+                        <input type="text" name="address" id="address" placeholder="Address">
+                    </div>
+
+                    <!-- <div class="row">
                         <label for="hostel">Hostel</label>
                         <select name="hostel" id="hostel" onchange="yesno(this);">
 
@@ -96,7 +151,7 @@
                     <div class="row" id="yes" style="display: none;">
                         <label>Hostel no.</label>
                         <input type="text" name="hostel_no" id="hostel_no" placeholder="Hostel no.">
-                    </div>
+                    </div> -->
 
                     <div class="row">
                         <label>Contribution</label>
@@ -106,6 +161,11 @@
                     <div class="row">
                         <label for="">Additional Contribution</label>
                         <input type="number" min="0" name="add_contribution" id="add_contribution" placeholder="Additional Contribution">
+                    </div>
+
+                    <div class="row">
+                        <label for="">Date</label>
+                        <input type="date" name="date" id="date" required>
                     </div>
 
                     <div class="row">
@@ -136,26 +196,28 @@
     <script>
         function GetDetail(str) {
             input_name = document.getElementById("name");
-            input_address = document.getElementById("address");
-            input_occupation = document.getElementById("occupation");
-            input_yop = document.getElementById("yop");
+            input_phone = document.getElementById("phone");
             input_branch = document.getElementById("branch");
-            input_hostel = document.getElementById("hostel");
-            input_hostel_no = document.getElementById("hostel_no");
+            input_yop = document.getElementById("yop");
+            input_chapter = document.getElementById("chapter");
+            input_address = document.getElementById("address");
             input_contribution = document.getElementById("contribution");
+            input_add_contribution = document.getElementById("add_contribution");
+            input_date = document.getElementById("date");
 
             if (str.length == 0) {
 
 
 
                 input_name.value = "";
-                input_address.value = "";
-                input_occupation.value = "";
-                input_yop.value = "";
+                input_phone.value = "";
                 input_branch.value = "";
-                input_hostel.value = "";
-                input_hostel_no.value = "";
+                input_yop.value = "";
+                input_chapter.value = "";
+                input_address.value = "";
                 input_contribution.value = "";
+                input_add_contribution.value = "";
+                input_date.value = "";
                 return;
             } else {
 
@@ -171,54 +233,55 @@
                         if (myObj === null) {
                             input_name.readOnly = false;
                             input_address.readOnly = false;
-                            input_occupation.readOnly = false;
+                            input_phone.readOnly = false;
                             input_yop.readOnly = false;
                             input_branch.disabled = false;
-                            input_hostel.disabled = false;
+                            input_chapter.disabled = false;
                             input_contribution.readOnly = false;
 
                             input_name.value = "";
                             input_address.value = "";
-                            input_occupation.value = "";
+                            input_phone.value = "";
                             input_yop.value = "";
                             input_branch.value = "";
-                            input_hostel.value = "";
-                            input_hostel_no.value = "";
+                            input_chapter.value = "";
                             input_contribution.value = "";
+                            input_add_contribution.value = "";
+                            input_date.value = "";
                         }
 
                         input_name.value = myObj[0];
-                        input_address.value = myObj[1];
-
-                        input_occupation.value = myObj[2];
+                        input_phone.value = myObj[1];
+                        input_branch.value = myObj[2];
                         input_yop.value = myObj[3];
-                        input_branch.value = myObj[4];
-                        input_hostel.value = myObj[5];
-                        input_hostel_no.value = myObj[6];
-                        input_contribution.value = myObj[7];
+                        input_chapter.value = myObj[4];
+                        input_address.value = myObj[5];
+                        input_contribution.value = myObj[6];
+                        input_add_contribution.value = myObj[7];
+                        input_date.value = myObj[8];
+
 
                         input_name.readOnly = true;
                         input_address.readOnly = true;
-                        input_occupation.readOnly = true;
+                        input_phone.readOnly = true;
                         input_yop.readOnly = true;
                         input_branch.readOnly = true;
-                        input_hostel.readOnly = true;
-                        input_hostel_no.readOnly = true;
+                        input_chapter.readOnly = true;
                         input_contribution.readOnly = true;
                     }
 
 
                 };
 
-                xmlhttp.open("GET", "getdetails.php?phone=" + str, true);
+                xmlhttp.open("GET", "getdetails.php?email=" + str, true);
 
                 xmlhttp.send();
             }
         }
     </script>
 
-
-    <script>
+    <!-- hostel field show/hide -->
+    <!-- <script>
         function yesno(that) {
             if (that.value == "yes") {
                 document.getElementById("yes").style.display = "flex";
@@ -226,9 +289,9 @@
                 document.getElementById("yes").style.display = "none";
             }
         }
-    </script>
+    </script> -->
 
-<script src="modal-nav.js"></script>
+    <script src="modal-nav.js"></script>
 
 </body>
 

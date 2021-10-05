@@ -8,14 +8,19 @@
         <center>
             <div class="line"></div>
         </center>
+        <br>
 
         <div class="modal-options">
            <a href="index.php">Register New Alumni</a>
         </div>
         <br>
         <div class="modal-options">
-           <a href="viewalu.php">View New Alumni</a>
+           <a href="viewalu.php">View Alumni</a>
         </div>
+        <br>
+        <center>
+            <div class="line"></div>
+        </center>
         <br>
         <div class="modal-options">
            <a href="reg_prev_alumni.php">Insert Previously Registered Alumni</a>

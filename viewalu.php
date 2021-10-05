@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="st.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.material.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.material.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/4.0.0/material-components-web.min.css">
-  
 </head>
 
 <body>
@@ -42,21 +38,25 @@
 
     <main>
 
+    <center>
+    <div class="search">
+                <input type="text" id="search" placeholder="Type here to Search...">
+            </div>
+    </center>
+
         <div id="myModal" class="modal">
         <table id="datatable" class="mdl-data-table">
                 <thead style="background-color: lightgray;">
-                    <th style="text-align:center;">ID</th>
-                    <th style="text-align:center;">Phone</th>
-                    <th style="text-align:center;">Name</th>
-                    <th style="text-align:center;">Address</th>
-                    <th style="text-align:center;">Occupation</th>
-                    <th style="text-align:center;">YOP</th>
-                    <th style="text-align:center;">Branch</th>
-                    <th style="text-align:center;">Hostel</th>
-                    <th style="text-align:center;">Hostel No</th>
-                    <th style="text-align:center;">Contribution</th>
-                    <th style="text-align:center;">Additonal Contribution</th>
-                    <th style="text-align:center;">Total Contribution</th>
+                    <th style="text-align:center; width:2%;">ID</th>
+                    <th style="text-align:center; width:14%;">Name</th>
+                    <th style="text-align:center; width:12%;">E-mail</th>
+                    <th style="text-align:center; width:10%;">Phone</th>
+                    <th style="text-align:center; width:10%;">Branch</th>
+                    <th style="text-align:center; width:10%;">Batch</th>
+                    <th style="text-align:center; width:10%;">Chapter</th>
+                    <th style="text-align:center; width:12%;">Address</th>
+                    <th style="text-align:center; width:10%;">Total Contribution</th>
+                    <th style="text-align:center; width:10%;">Date</th>
                 </thead>
                 <tbody>
 
@@ -66,23 +66,31 @@
                       $result=mysqli_query($con,$sql);
                       while($row=mysqli_fetch_array($result))
                           {
-                          echo'<tr class="my-white" style="border-width: 0px;">';
-                                echo'<td text-align:center;">'.$row[0].'</td>';
-                                echo'<td text-align:center;">'.$row[1].'</td>';
-                                echo'<td text-align:center;">'.$row[2].'</td>';
-                                echo'<td text-align:center;">'.$row[3].'</td>';
-                                echo'<td text-align:center;">'.$row[4].'</td>';
-                                echo'<td text-align:center;">'.$row[5].'</td>';
-                                echo'<td text-align:center;">'.$row[6].'</td>';
-                                echo'<td text-align:center;">'.$row[7].'</td>';
-                                echo'<td text-align:center;">'.$row[8].'</td>';
-                                echo'<td text-align:center;">'.$row[9].'</td>';
-                                echo'<td text-align:center;">'.$row[10].'</td>';
-                                echo'<td text-align:center;">'.$row[11].'</td>';
-                                
-                                
-                                
-                        echo'</tr>';
+                            ?>
+                            <tr>
+                            <td style="text-align:center; width:2%;"><?php echo $row[0]; ?></td>
+                            
+                            <td style="text-align:center; width:14%;" ><?php echo $row[3]; ?></td>
+                            
+                            <td style="text-align:center; width:12%;" ><?php echo $row[1]; ?></td>
+                            
+                            <td style="text-align:center; width:10%;<?php if($row[2] == "") {echo 'background-color:rgba(160, 4, 4, 0.314);';} ?>" ><?php echo $row[2]; ?></td>
+                            
+                            <td style="text-align:center; width:10%;<?php if($row[6] == "") {echo 'background-color:rgba(160, 4, 4, 0.314);';} ?>" ><?php echo $row[6]; ?></td>
+                            
+                            <td style="text-align:center; width:10%;<?php if($row[5] == "") {echo 'background-color:rgba(160, 4, 4, 0.314);';} ?>" ><?php echo $row[5]; ?></td>
+
+                            <td style="text-align:center; width:10%;" ><?php echo $row[7]; ?></td>
+                            
+                            <td style="text-align:center; width:12%;<?php if($row[4] == "") {echo 'background-color:rgba(160, 4, 4, 0.314);';} ?>" ><?php echo $row[4]; ?></td>
+                            
+                            
+                            <td style="text-align:center; width:10%;" ><?php echo $row[10]; ?></td>
+                            
+                            <td style="text-align:center; width:10%;" ><?php echo $row[11]; ?></td>
+
+                            <?php
+                    echo '</tr>';
                           }   
                       ?>   
                     
@@ -113,17 +121,17 @@
 
 <script>
 $(document).ready(function() {
-    $('#datatable').DataTable( {
-        autoWidth: false,
-        columnDefs: [
-            {
-                targets: ['_all'],
-                className: 'mdc-data-table__cell'
-            }
-        ]
+    dTable=$('#datatable').DataTable( {
+        responsive: true,
+        "dom":"lrtip"
     } );
 } );
+
+$('#search').keyup(function(){  
+        dTable.search($(this).val()).draw(); 
+   })
 </script>
+
 <script src="modal-nav.js"></script>
 
 </body>

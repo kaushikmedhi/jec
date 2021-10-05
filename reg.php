@@ -1,14 +1,14 @@
 <?php
 include('connect.php');
 
-$phone = $_POST["phone"];
+$email = $_POST["email"];
+$phone =  empty($_POST['phone']) ? null :  $_POST["phone"];
 $name = $_POST["name"];
-$address = $_POST["address"];
-$occupation = $_POST["occupation"];
-$yop = $_POST["yop"];
-$branch = $_POST["branch"];
-$hostel = $_POST["hostel"];
-$hostel_no = empty($_POST['hostel_no']) ? '0' : $_POST['hostel_no'];
+$chapter = $_POST["chapter"];
+$address =  empty($_POST['address']) ? null :  $_POST["address"];
+$occupation =  empty($_POST['occupation']) ? null : $_POST["occupation"];
+$yop =  empty($_POST['yop']) ? null : $_POST["yop"];
+$branch =  empty($_POST['branch']) ? null : $_POST["branch"];
 $contribution = $_POST["contribution"];
 $add_contribution = empty($_POST['add_contribution']) ? '0' : $_POST['add_contribution'];
 $total = $contribution + $add_contribution;
@@ -16,7 +16,7 @@ $total = $contribution + $add_contribution;
 
 
 
-				$query = "INSERT INTO `alumni` (`id`, `phone`, `name`, `address`, `occupation`, `yop`, `branch`, `hostel`, `hostel_no`, `contribution`, `add_contribution`,`total`, `reg_date`) VALUES (null, '$phone', '$name', '$address', '$occupation', '$yop', '$branch', '$hostel', '$hostel_no', '$contribution', '$add_contribution', '$total', CURRENT_TIMESTAMP()) ON DUPLICATE KEY UPDATE   
+				$query = "INSERT INTO `alumni` (`id`, `email`, `phone`, `name`, `address`, `yop`, `branch`, `chapter`, `contribution`, `add_contribution`, `total`, `reg_date`) VALUES (null, '$email', '$phone', '$name', '$address', '$yop', '$branch', '$chapter', '$contribution', '$add_contribution', '$total', CURRENT_TIMESTAMP()) ON DUPLICATE KEY UPDATE   
 				`add_contribution`= '$add_contribution', `reg_date`=CURRENT_TIMESTAMP(), `total` = '$total' ";
 
 				if (mysqli_query($con, $query)) {
