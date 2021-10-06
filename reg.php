@@ -12,12 +12,13 @@ $branch =  empty($_POST['branch']) ? null : $_POST["branch"];
 $contribution = $_POST["contribution"];
 $add_contribution = empty($_POST['add_contribution']) ? '0' : $_POST['add_contribution'];
 $total = $contribution + $add_contribution;
+$date = $_POST['date'];
 
 
 
 
 				$query = "INSERT INTO `alumni` (`id`, `email`, `phone`, `name`, `address`, `yop`, `branch`, `chapter`, `contribution`, `add_contribution`, `total`, `reg_date`) VALUES (null, '$email', '$phone', '$name', '$address', '$yop', '$branch', '$chapter', '$contribution', '$add_contribution', '$total', CURRENT_TIMESTAMP()) ON DUPLICATE KEY UPDATE   
-				`add_contribution`= '$add_contribution', `reg_date`=CURRENT_TIMESTAMP(), `total` = '$total' ";
+				`add_contribution`= '$add_contribution', `reg_date`='$date', `total` = '$total' ";
 
 				if (mysqli_query($con, $query)) {
 					header("location:index.php");
