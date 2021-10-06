@@ -40,19 +40,22 @@
             <div class="modal-content">
 
                 <form action="reg.php" method="POST">
+
+                     <div class="row">
+                        <label>Phone</label>
+                        <input type="number" minlength="10" maxlength="10" name="phone" id="phone" placeholder="Phone" onkeyup="GetDetail(this.value)">
+                    </div>
+
                     <div class="row">
                         <label>E-mail</label>
-                        <input type="email" name="email" id="email" onkeyup="GetDetail(this.value)" placeholder="E-mail" required>
+                        <input type="email" name="email" id="email"  placeholder="E-mail" required>
                     </div>
 
                     <div class="row">
                         <label>Name</label>
                         <input type="text" name="name" id="name" placeholder="Name" required>
                     </div>
-                    <div class="row">
-                        <label>Phone</label>
-                        <input type="number" min="10" name="phone" id="phone" placeholder="Phone">
-                    </div>
+                  
 
 
                     <div class="row">
@@ -78,7 +81,7 @@
 
                     <div class="row">
                         <label>Batch</label>
-                        <input type="number" min="4" max="4" name="yop" id="yop" placeholder="Year of passing">
+                        <input type="number" min="1963" max="2021" name="yop" id="yop" placeholder="Year of passing">
                     </div>
 
                     <div class="row">
@@ -196,7 +199,7 @@
     <script>
         function GetDetail(str) {
             input_name = document.getElementById("name");
-            input_phone = document.getElementById("phone");
+            input_email = document.getElementById("email");
             input_branch = document.getElementById("branch");
             input_yop = document.getElementById("yop");
             input_chapter = document.getElementById("chapter");
@@ -210,7 +213,7 @@
 
 
                 input_name.value = "";
-                input_phone.value = "";
+                input_email.value = "";
                 input_branch.value = "";
                 input_yop.value = "";
                 input_chapter.value = "";
@@ -233,7 +236,7 @@
                         if (myObj === null) {
                             input_name.readOnly = false;
                             input_address.readOnly = false;
-                            input_phone.readOnly = false;
+                            input_email.readOnly = false;
                             input_yop.readOnly = false;
                             input_branch.disabled = false;
                             input_chapter.disabled = false;
@@ -241,7 +244,7 @@
 
                             input_name.value = "";
                             input_address.value = "";
-                            input_phone.value = "";
+                            input_email.value = "";
                             input_yop.value = "";
                             input_branch.value = "";
                             input_chapter.value = "";
@@ -251,7 +254,7 @@
                         }
 
                         input_name.value = myObj[0];
-                        input_phone.value = myObj[1];
+                        input_email.value = myObj[1];
                         input_branch.value = myObj[2];
                         input_yop.value = myObj[3];
                         input_chapter.value = myObj[4];
@@ -261,19 +264,13 @@
                         input_date.value = myObj[8];
 
 
-                        input_name.readOnly = true;
-                        input_address.readOnly = true;
-                        input_phone.readOnly = true;
-                        input_yop.readOnly = true;
-                        input_branch.readOnly = true;
-                        input_chapter.readOnly = true;
-                        input_contribution.readOnly = true;
+                        
                     }
 
 
                 };
 
-                xmlhttp.open("GET", "getdetails.php?email=" + str, true);
+                xmlhttp.open("GET", "getdetails.php?phone=" + str, true);
 
                 xmlhttp.send();
             }

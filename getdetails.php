@@ -1,13 +1,13 @@
 <?php
 
 // Get the phone no.
-$email = $_REQUEST['email'];
+$phone = $_REQUEST['phone'];
 
 include 'connect.php';
 
-if ($email !== "") {
+if ($phone !== "") {
 
-      $query = mysqli_query($con, "SELECT * FROM alumni WHERE email='$email'");
+      $query = mysqli_query($con, "SELECT * FROM alumni WHERE phone='$phone'");
 
       if (mysqli_num_rows($query) > 0) {
       
@@ -15,7 +15,7 @@ if ($email !== "") {
 
       $name = $row["name"];
       $address = $row["address"];
-      $phone = $row["phone"];
+      $email = $row["email"];
       $yop = $row["yop"];
       $branch = $row["branch"];
       $chapter = $row["chapter"];
@@ -28,7 +28,7 @@ if ($email !== "") {
      
 
       // Store it in a array
-      $result = array("$name", "$phone", "$branch", "$yop", "$chapter", "$address", "$contribution", "$add_contribution", "$date");
+      $result = array("$name", "$email", "$branch", "$yop", "$chapter", "$address", "$contribution", "$add_contribution", "$date");
    }else {
       $result = null;
    }
